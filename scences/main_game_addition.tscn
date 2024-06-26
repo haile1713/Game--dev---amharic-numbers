@@ -35,20 +35,96 @@ theme_override_constants/margin_bottom = 11
 [node name="VBox" type="VBoxContainer" parent="Background/Margin"]
 layout_mode = 2
 
-[node name="Header" type="HBoxContainer" parent="Background/Margin/VBox"]
-custom_minimum_size = Vector2(0, 100)
+[node name="MarginContainer" type="MarginContainer" parent="Background/Margin/VBox"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
-[node name="Title" type="Label" parent="Background/Margin/VBox/Header"]
+[node name="GridContainer" type="GridContainer" parent="Background/Margin/VBox/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 2
-theme_override_font_sizes/font_size = 50
-text = "Order These Numbers "
+columns = 5
+
+[node name="Q-card" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer/Q-card"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Addition" type="MarginContainer" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Background/Margin/VBox/MarginContainer/GridContainer/Addition"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/Margin/VBox"]
-custom_minimum_size = Vector2(0, 85)
+[node name="Q-card2" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer/Q-card2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Equal" type="MarginContainer" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Background/Margin/VBox/MarginContainer/GridContainer/Equal"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Q-card3" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer/Q-card3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/Margin/VBox"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Background/Margin/VBox"]

@@ -1,11 +1,11 @@
-NinePatchRect
 MarginContainer
-Node2D
-TextureRect
+HBoxContainer
 Label
 GridContainer
+NinePatchRect
+Node2D
+TextureRect
 ScrollContainer
-HBoxContainer
 VBoxContainer
 Sprite2D
 TextureButton
