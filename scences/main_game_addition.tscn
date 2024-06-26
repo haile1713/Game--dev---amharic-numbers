@@ -1,0 +1,188 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk4g2a3tw77rm"]
+
+[ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_33rjm"]
+[ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="2_4dabi"]
+
+[node name="Main-game-addition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(576, 1024)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_33rjm")
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.5
+offset_right = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 19
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 19
+theme_override_constants/margin_bottom = 11
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Background/Margin/VBox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Background/Margin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Order These Numbers "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/Margin/VBox"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Background/Margin/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="Card1" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card2" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card3" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card4" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card5" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card6" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card7" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card8" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card9" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+texture = ExtResource("2_4dabi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
