@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://wqvuq0gme1lf"]
+
+[ext_resource type="Texture2D" uid="uid://p5t1ararmnd8" path="res://assets/bg2.jpeg" id="1_scfqh"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 1024.0
+texture = ExtResource("1_scfqh")
+expand_mode = 1
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Title" type="Label" parent="UI"]
+offset_top = 200.0
+offset_right = 576.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(0.952941, 0.647059, 0.380392, 1)
+theme_override_font_sizes/font_size = 80
+text = "NUMBERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButtons" type="Node2D" parent="UI"]
+
+[node name="StartButton" type="TextureButton" parent="UI/MenuButtons"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Label" parent="UI/MenuButtons/StartButton"]
+layout_mode = 0
+offset_top = 400.0
+offset_right = 576.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0.388235, 0.211765, 0.0588235, 1)
+theme_override_font_sizes/font_size = 60
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="UI/MenuButtons"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Quit" type="Label" parent="UI/MenuButtons/QuitButton"]
+layout_mode = 0
+offset_top = 550.0
+offset_right = 576.0
+offset_bottom = 700.0
+theme_override_colors/font_color = Color(0.388235, 0.211765, 0.0588235, 1)
+theme_override_font_sizes/font_size = 60
+text = "Quit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
