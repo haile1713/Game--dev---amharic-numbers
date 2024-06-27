@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://wqvuq0gme1lf"]
+[gd_scene load_steps=3 format=3 uid="uid://wqvuq0gme1lf"]
 
+[ext_resource type="Script" path="res://scripts/start_game.gd" id="1_5gtae"]
 [ext_resource type="Texture2D" uid="uid://p5t1ararmnd8" path="res://assets/bg2.jpeg" id="1_scfqh"]
 
 [node name="Game" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5gtae")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

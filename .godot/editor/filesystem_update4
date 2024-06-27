@@ -2,3 +2,7 @@ res://scences/game.tscn
 res://scences/main_game.tscn
 res://scences/main_game_addition.tscn
 res://scences/main_game_subtraction.tscn
+res://scences/map.tscn
+res://scripts/map_maker.gd
+res://scripts/main_order_game.gd
+res://scripts/start_game.gd
