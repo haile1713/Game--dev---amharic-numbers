@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjid4i8ck5agc"]
+[gd_scene load_steps=6 format=3 uid="uid://bjid4i8ck5agc"]
 
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_1k6nw"]
 [ext_resource type="Script" path="res://scripts/map_maker.gd" id="1_sbo56"]
+[ext_resource type="Script" path="res://scences/map.gd" id="1_sxahk"]
 [ext_resource type="Texture2D" uid="uid://bmbxpf4p5gc71" path="res://assets/current_level.png" id="2_4s5tk"]
 
 [sub_resource type="Curve2D" id="Curve2D_eu77c"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sxahk")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 1
@@ -44,3 +46,16 @@ loop = false
 rotation = -2.96174
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_4s5tk")
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 0)
+offset_right = 149.0
+offset_bottom = 91.0
+scale = Vector2(0.672838, 0.603122)
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_font_sizes/font_size = 40
+text = "Back
+"
+flat = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
