@@ -1,15 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjid4i8ck5agc"]
+[gd_scene load_steps=8 format=3 uid="uid://bjid4i8ck5agc"]
 
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_1k6nw"]
 [ext_resource type="Script" path="res://scripts/map_maker.gd" id="1_sbo56"]
-[ext_resource type="Script" path="res://scences/map.gd" id="1_sxahk"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_sxahk"]
 [ext_resource type="Texture2D" uid="uid://bmbxpf4p5gc71" path="res://assets/current_level.png" id="2_4s5tk"]
+[ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="5_7e64r"]
 
 [sub_resource type="Curve2D" id="Curve2D_eu77c"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 562, 1, 0, 0, 0, 0, 551, 3, 0, 0, 0, 0, 524, 14, 0, 0, 0, 0, 508, 22, 0, 0, 0, 0, 489, 31, 0, 0, 0, 0, 464, 44, 0, 0, 0, 0, 447, 53, 0, 0, 0, 0, 428, 61, 0, 0, 0, 0, 409, 66, 0, 0, 0, 0, 390, 75, 0, 0, 0, 0, 370, 79, 0, 0, 0, 0, 336, 86, 0, 0, 0, 0, 311, 96, 0, 0, 0, 0, 279, 112, 0, 0, 0, 0, 259, 121, 0, 0, 0, 0, 230, 137, 0, 0, 0, 0, 209, 155, 0, 0, 0, 0, 199, 173, 0, 0, 0, 0, 191, 191, 0, 0, 0, 0, 187, 214, 0, 0, 0, 0, 190, 236, 0, 0, 0, 0, 192, 262, 0, 0, 0, 0, 193, 285, 0, 0, 0, 0, 195, 312, 0, 0, 0, 0, 196, 336, 0, 0, 0, 0, 218, 346, 0, 0, 0, 0, 235, 353, 0, 0, 0, 0, 257, 362, 0, 0, 0, 0, 275, 371, 0, 0, 0, 0, 306, 389, 0, 0, 0, 0, 327, 398, 0, 0, 0, 0, 362, 410, 0, 0, 0, 0, 373, 431, 0, 0, 0, 0, 376, 476, 0, 0, 0, 0, 372, 497, 0, 0, 0, 0, 368, 517, 0, 0, 0, 0, 365, 536, 0, 0, 0, 0, 353, 561, 0, 0, 0, 0, 337, 581, 0, 0, 0, 0, 283, 585, 0, 0, 0, 0, 256, 585, 0, 0, 0, 0, 217, 589, 0, 0, 0, 0, 198, 590, 0, 0, 0, 0, 155, 590, 0, 0, 0, 0, 149, 615, 0, 0, 0, 0, 138, 649, 0, 0, 0, 0, 140, 672, 0, 0, 0, 0, 142, 720, 0, 0, 0, 0, 147, 743, 0, 0, 0, 0, 164, 754, 0, 0, 0, 0, 180, 764, 0, 0, 0, 0, 198, 773, 0, 0, 0, 0, 228, 787, 0, 0, 0, 0, 253, 797, 0, 0, 0, 0, 273, 804, 0, 0, 0, 0, 305, 816, 0, 0, 0, 0, 314, 838, 0, 0, 0, 0, 325, 878, 0, 0, 0, 0, 309, 901, 0, 0, 0, 0, 293, 915, 0, 0, 0, 0, 276, 925, 0, 0, 0, 0, 254, 940, 0, 0, 0, 0, 225, 953, 0, 0, 0, 0, 204, 956, 0, 0, 0, 0, 184, 958, 0, 0, 0, 0, 167, 962, 0, 0, 0, 0, 138, 970, 0, 0, 0, 0, 125, 974, 0, 0, 0, 0, 107, 979, 0, 0, 0, 0, 84, 986, 0, 0, 0, 0, 60, 993, 0, 0, 0, 0, 50, 998, 0, 0, 0, 0, 30, 1004, 0, 0, 0, 0, 11, 1011)
 }
 point_count = 74
+
+[sub_resource type="FontVariation" id="FontVariation_wnuwq"]
+base_font = ExtResource("5_7e64r")
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -49,13 +53,14 @@ texture = ExtResource("2_4s5tk")
 
 [node name="BackButton" type="Button" parent="."]
 custom_minimum_size = Vector2(60, 0)
+layout_mode = 0
 offset_right = 149.0
 offset_bottom = 91.0
 scale = Vector2(0.672838, 0.603122)
 theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_wnuwq")
 theme_override_font_sizes/font_size = 40
-text = "Back
-"
+text = "ተመለስ"
 flat = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

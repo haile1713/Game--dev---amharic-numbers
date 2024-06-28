@@ -5,3 +5,4 @@ res://scences/main_game_subtraction.tscn
 res://scences/map.tscn
 res://scripts/start_game.gd
 res://scences/map.gd
+res://scripts/display_random_nums.gd

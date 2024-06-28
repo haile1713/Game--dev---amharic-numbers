@@ -20,6 +20,9 @@ func show_num(num:int, card_indexes:Array)->void:
 		texture_rect.position.y += shift
 		card.add_child(texture_rect)
 		shift+=gap
+		
+		
+		
 
 func numbers_needed(num:int):
 	var dividend:int = num

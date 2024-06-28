@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfyioqlm7l146"]
+[gd_scene load_steps=6 format=3 uid="uid://cfyioqlm7l146"]
 
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_0ywiw"]
 [ext_resource type="Script" path="res://scripts/display_random_nums.gd" id="2_n18n3"]
 [ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="2_t58j6"]
+[ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="2_v3xhp"]
+
+[sub_resource type="FontVariation" id="FontVariation_dg4xq"]
+base_font = ExtResource("2_v3xhp")
 
 [node name="MainGame" type="Control"]
 layout_mode = 3
@@ -42,9 +46,12 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Background/Margin/VBox/Header"]
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_dg4xq")
 theme_override_font_sizes/font_size = 50
-text = "Order These Numbers "
+text = "እነዚህን ቁጥሮች ደርድር"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -55,6 +62,8 @@ layout_mode = 2
 [node name="ScrollContainer" type="ScrollContainer" parent="Background/Margin/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
 
 [node name="GridContainer" type="GridContainer" parent="Background/Margin/VBox/ScrollContainer"]
 layout_mode = 2
