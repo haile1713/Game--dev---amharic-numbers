@@ -19,11 +19,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 1.0
-offset_right = 583.0
-offset_bottom = 1027.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_1k6nw")
 
 [node name="Path2D" type="Path2D" parent="."]

@@ -33,33 +33,28 @@ vertical_alignment = 1
 
 [node name="MenuButtons" type="Node2D" parent="UI"]
 
-[node name="StartButton" type="TextureButton" parent="UI/MenuButtons"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Start" type="Label" parent="UI/MenuButtons/StartButton"]
-layout_mode = 0
+[node name="StartButton" type="Button" parent="UI/MenuButtons"]
+custom_minimum_size = Vector2(60, 0)
 offset_top = 400.0
 offset_right = 576.0
 offset_bottom = 550.0
 theme_override_colors/font_color = Color(0.388235, 0.211765, 0.0588235, 1)
 theme_override_font_sizes/font_size = 60
-text = "Start"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "Start
+"
+flat = true
 
-[node name="QuitButton" type="TextureButton" parent="UI/MenuButtons"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Quit" type="Label" parent="UI/MenuButtons/QuitButton"]
-layout_mode = 0
+[node name="QuitButton" type="Button" parent="UI/MenuButtons"]
+custom_minimum_size = Vector2(60, 0)
 offset_top = 550.0
 offset_right = 576.0
 offset_bottom = 700.0
 theme_override_colors/font_color = Color(0.388235, 0.211765, 0.0588235, 1)
 theme_override_font_sizes/font_size = 60
 text = "Quit
+
 "
-horizontal_alignment = 1
-vertical_alignment = 1
+flat = true
+
+[connection signal="pressed" from="UI/MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="UI/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
