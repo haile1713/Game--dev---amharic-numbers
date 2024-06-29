@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cfyioqlm7l146"]
 
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_0ywiw"]
-[ext_resource type="Script" path="res://scences/main_game.gd" id="1_22oed"]
+[ext_resource type="Script" path="res://scripts/main_game.gd" id="1_22oed"]
 [ext_resource type="Script" path="res://scripts/display_random_nums.gd" id="2_n18n3"]
 [ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="2_t58j6"]
 [ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="2_v3xhp"]
@@ -97,13 +97,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card1"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card2" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -111,13 +112,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card2"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card3" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -125,13 +127,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card3"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card4" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -139,13 +142,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card4"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card5" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -153,13 +157,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card5"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card6" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -167,13 +172,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card6"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card6"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card7" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -181,13 +187,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card7"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card8" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -195,13 +202,14 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card8"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card8"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [node name="Card9" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
@@ -209,12 +217,22 @@ layout_mode = 2
 texture = ExtResource("2_t58j6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card9"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card9"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
 
 [connection signal="pressed" from="Background/Margin/VBox/MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card1/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card4/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card5/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card6/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card7/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card8/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card9/Button" to="." method="_on_button_pressed"]

@@ -6,3 +6,4 @@ res://scences/main_game_subtraction.tscn
 res://scences/main_game.gd
 res://scences/main_game_addition.gd
 res://scences/main_game_subtraction.gd
+res://scripts/display_random_nums.gd

@@ -8,7 +8,7 @@ func _ready():
 
 func show_num(num:int, card_indexes:Array)->void:
 	var numbers = numbers_needed(num) # for more than 1 digits
-	var card_name = "Card%d" % card_indexes[num-1]
+	var card_name = "Card%d/Button" % card_indexes[num-1]
 	var card  = get_node(card_name)
 	var gap = 50
 	var shift = 0
