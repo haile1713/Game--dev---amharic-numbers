@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfyioqlm7l146"]
+[gd_scene load_steps=8 format=3 uid="uid://cfyioqlm7l146"]
 
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_0ywiw"]
+[ext_resource type="Script" path="res://scences/main_game.gd" id="1_22oed"]
 [ext_resource type="Script" path="res://scripts/display_random_nums.gd" id="2_n18n3"]
 [ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="2_t58j6"]
 [ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="2_v3xhp"]
+
+[sub_resource type="FontVariation" id="FontVariation_o0dvx"]
+base_font = ExtResource("2_v3xhp")
 
 [sub_resource type="FontVariation" id="FontVariation_dg4xq"]
 base_font = ExtResource("2_v3xhp")
@@ -15,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_22oed")
 
 [node name="Background" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -39,6 +44,20 @@ theme_override_constants/margin_bottom = 11
 
 [node name="VBox" type="VBoxContainer" parent="Background/Margin"]
 layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/Margin/VBox"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Background/Margin/VBox/MarginContainer2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_o0dvx")
+theme_override_font_sizes/font_size = 40
+text = "ተመለስ"
+flat = true
 
 [node name="Header" type="HBoxContainer" parent="Background/Margin/VBox"]
 custom_minimum_size = Vector2(0, 100)
@@ -197,3 +216,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="pressed" from="Background/Margin/VBox/MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]

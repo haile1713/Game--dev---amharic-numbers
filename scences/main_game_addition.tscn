@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk4g2a3tw77rm"]
+[gd_scene load_steps=9 format=3 uid="uid://dk4g2a3tw77rm"]
 
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_33rjm"]
+[ext_resource type="Script" path="res://scences/main_game_addition.gd" id="1_g22oj"]
 [ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="2_4dabi"]
 [ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="3_e70i8"]
 [ext_resource type="Script" path="res://scripts/display_random_nums.gd" id="3_edeqf"]
@@ -11,6 +12,9 @@ base_font = ExtResource("3_e70i8")
 [sub_resource type="FontVariation" id="FontVariation_esll5"]
 base_font = ExtResource("3_e70i8")
 
+[sub_resource type="FontVariation" id="FontVariation_b432d"]
+base_font = ExtResource("3_e70i8")
+
 [node name="Main-game-addition" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g22oj")
 
 [node name="Background" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(576, 1024)
@@ -46,6 +51,7 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="Background/Margin/VBox"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="GridContainer" type="GridContainer" parent="Background/Margin/VBox/MarginContainer"]
 layout_mode = 2
@@ -273,3 +279,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 85.0
+
+[node name="BackButton" type="Button" parent="MarginContainer2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_b432d")
+theme_override_font_sizes/font_size = 40
+text = "ተመለስ"
+flat = true
+
+[connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]

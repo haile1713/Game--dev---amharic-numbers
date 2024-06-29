@@ -1,8 +1,8 @@
 res://scences/game.tscn
+res://scences/map.tscn
 res://scences/main_game.tscn
 res://scences/main_game_addition.tscn
 res://scences/main_game_subtraction.tscn
-res://scences/map.tscn
-res://scripts/start_game.gd
-res://scences/map.gd
-res://scripts/display_random_nums.gd
+res://scences/main_game.gd
+res://scences/main_game_addition.gd
+res://scences/main_game_subtraction.gd

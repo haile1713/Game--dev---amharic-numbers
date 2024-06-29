@@ -1,8 +1,8 @@
+Label
 Button
 CheckButton
 MarginContainer
 HBoxContainer
-Label
 GridContainer
 NinePatchRect
 Node2D

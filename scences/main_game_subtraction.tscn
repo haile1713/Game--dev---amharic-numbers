@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdd5gc60ake0c"]
+[gd_scene load_steps=9 format=3 uid="uid://bdd5gc60ake0c"]
 
+[ext_resource type="Script" path="res://scences/main_game_subtraction.gd" id="1_l0txv"]
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="1_s3ldi"]
 [ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="2_05mdg"]
 [ext_resource type="Script" path="res://scripts/display_random_nums.gd" id="3_1lpdf"]
@@ -11,6 +12,9 @@ base_font = ExtResource("3_xsxk8")
 [sub_resource type="FontVariation" id="FontVariation_bce0u"]
 base_font = ExtResource("3_xsxk8")
 
+[sub_resource type="FontVariation" id="FontVariation_5a58k"]
+base_font = ExtResource("3_xsxk8")
+
 [node name="Main-game-subtraction" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l0txv")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(576, 1024)
@@ -273,3 +278,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 85)
+offset_right = 110.0
+offset_bottom = 85.0
+
+[node name="BackButton" type="Button" parent="MarginContainer2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_5a58k")
+theme_override_font_sizes/font_size = 40
+text = "ተመለስ"
+flat = true
+
+[connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]
