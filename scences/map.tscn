@@ -47,6 +47,7 @@ cubic_interp = false
 loop = false
 
 [node name="current_level" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(0, 7.62939e-06)
 rotation = -2.96174
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_4s5tk")
@@ -59,8 +60,8 @@ anchor_right = 0.623
 anchor_bottom = 0.704
 offset_left = -250.0
 offset_top = -250.0
-offset_right = -250.0
-offset_bottom = -250.0
+offset_right = -242.0
+offset_bottom = -242.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.00734)
@@ -79,5 +80,5 @@ theme_override_font_sizes/font_size = 40
 text = "ተመለስ"
 flat = true
 
-[connection signal="pressed" from="Path2D/PathFollow2D/current_level/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Path2D/PathFollow2D/current_level/Button" to="Path2D/map drawing" method="_on_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

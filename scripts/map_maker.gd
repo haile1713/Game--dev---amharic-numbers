@@ -11,8 +11,6 @@ var num_levels = 4
 func _ready():
 	var level_name = "level-%d" %current_level 
 	level_indicator.name = level_name
-	#var btn=Button.new()
-	#path_follower.add_child(btn)
 # utilities
 func pass_level():
 	if(current_level < num_levels): 
@@ -46,9 +44,11 @@ func _draw():
 			btn.position=point  + Vector2(-12,-12)
 			btn.size=Vector2(24,24)
 			btn.flat=true
-			btn.name = "level-%d"%level
+			btn.name = "level%d"%level
+			btn.add_to_group("levels")
 			$".".add_child(btn)
 			draw_circle(point,12,Color(0.8,0.4,0.2))
+	test()
 
 func _process(delta):
 	path_follower.progress_ratio +=delta*speed # make the icon for the current level go 
@@ -58,3 +58,20 @@ func _process(delta):
 		speed = 0
 	else:
 		speed = 0.1
+
+# go to current level button
+func _on_button_pressed():
+	var level_name = "res://scences/level%s.tscn"%(current_level+1)
+	get_tree().change_scene_to_file(level_name)
+# level 1 button
+func test():
+	var levels = get_tree().get_nodes_in_group("levels")
+	for i in levels:
+		var level = i.name
+		i.connect("pressed",go_to_level(level))
+func go_to_level(level):
+	var change_scene = func ():
+		var goto = "res://scences/%s.tscn"%level
+		get_tree().change_scene_to_file(goto)
+		
+	return change_scene
