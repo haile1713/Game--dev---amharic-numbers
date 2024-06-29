@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://w1ardfmjjkmq"]
 
-[ext_resource type="Script" path="res://scripts/level3.gd" id="1_pnvqw"]
-[ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="2_g7fww"]
-[ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="3_2m5va"]
+[ext_resource type="Script" path="res://scripts/level3.gd" id="1_5xixa"]
+[ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="2_721ls"]
+[ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="3_b71rv"]
 
 [sub_resource type="FontVariation" id="FontVariation_5a58k"]
-base_font = ExtResource("3_2m5va")
+base_font = ExtResource("3_b71rv")
 
 [node name="Main-game-subtraction" type="Control"]
 layout_mode = 3
@@ -14,14 +14,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pnvqw")
+script = ExtResource("1_5xixa")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(576, 1024)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_g7fww")
+texture = ExtResource("2_721ls")
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1

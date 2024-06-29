@@ -13,3 +13,8 @@ res://scences/level1.tscn
 res://scences/level2.tscn
 res://scences/level3.tscn
 res://scripts/level4.tscn
+res://scences/level4.tscn
+res://scripts/level1.gd
+res://scripts/level2.gd
+res://scripts/level3.gd
+res://scences/Button.gd

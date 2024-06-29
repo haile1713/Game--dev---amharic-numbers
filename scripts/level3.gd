@@ -6,4 +6,5 @@ func _on_back_button_pressed():
 
 
 func _on_button_pressed():
+	#just for testing
 	get_tree().change_scene_to_file("res://scences/game.tscn")

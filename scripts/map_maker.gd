@@ -4,7 +4,7 @@ extends Node2D
 @onready var path_follower = $"../PathFollow2D"
 @onready var level_indicator = $"../PathFollow2D/current_level"
 # initalization
-var current_level = 0
+var current_level = 1
 
 var speed = 0.1
 var num_levels = 4
@@ -25,7 +25,7 @@ func getLevel(path_progress,num_levels):
 	for i in range(num_levels): # increment level
 		var current =  i*spacing + start_Level # calculate current level position in %  
 		if path_progress > current and path_progress < current+dx: # check if it is in that level
-			return i
+			return i+1
 	return -1 # if it is not in any level
 
 # drawing the dotted lines
@@ -37,6 +37,7 @@ func _draw():
 			var point2 = curve.get_point_position(i-1)
 			draw_line(point2, point, Color(1,1,1), 5) # connect two point with a line
 		var path_progress = i/float(point_count)
+		print(getLevel(path_progress,num_levels))
 		if getLevel(path_progress, num_levels) != -1  and getLevel(path_progress, num_levels) != current_level:
 			 # if the progress it at a level which is not the current
 			var level = getLevel(path_progress, num_levels)
@@ -48,7 +49,7 @@ func _draw():
 			btn.add_to_group("levels")
 			$".".add_child(btn)
 			draw_circle(point,12,Color(0.8,0.4,0.2))
-	test()
+	go_to_level_on_button()
 
 func _process(delta):
 	path_follower.progress_ratio +=delta*speed # make the icon for the current level go 
@@ -61,10 +62,10 @@ func _process(delta):
 
 # go to current level button
 func _on_button_pressed():
-	var level_name = "res://scences/level%s.tscn"%(current_level+1)
+	var level_name = "res://scences/level%s.tscn"%current_level
 	get_tree().change_scene_to_file(level_name)
 # level 1 button
-func test():
+func  go_to_level_on_button():
 	var levels = get_tree().get_nodes_in_group("levels")
 	for i in levels:
 		var level = i.name

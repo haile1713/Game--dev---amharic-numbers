@@ -227,7 +227,6 @@ grow_vertical = 2
 flat = true
 
 [connection signal="pressed" from="Background/Margin/VBox/MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card1/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card3/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card4/Button" to="." method="_on_button_pressed"]
