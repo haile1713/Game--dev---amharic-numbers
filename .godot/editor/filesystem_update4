@@ -7,3 +7,8 @@ res://scences/main_game.gd
 res://scences/main_game_addition.gd
 res://scences/main_game_subtraction.gd
 res://scripts/display_random_nums.gd
+res://scripts/map_maker.gd
+res://scripts/map.gd
+res://scences/level1.tscn
+res://scences/level2.tscn
+res://scences/level3.tscn

@@ -4,13 +4,15 @@ extends Node2D
 @onready var path_follower = $"../PathFollow2D"
 @onready var level_indicator = $"../PathFollow2D/current_level"
 # initalization
-var current_level = 0 
+var current_level = 0
+
 var speed = 0.1
 var num_levels = 4
 func _ready():
 	var level_name = "level-%d" %current_level 
 	level_indicator.name = level_name
-
+	#var btn=Button.new()
+	#path_follower.add_child(btn)
 # utilities
 func pass_level():
 	if(current_level < num_levels): 
@@ -39,6 +41,13 @@ func _draw():
 		var path_progress = i/float(point_count)
 		if getLevel(path_progress, num_levels) != -1  and getLevel(path_progress, num_levels) != current_level:
 			 # if the progress it at a level which is not the current
+			var level = getLevel(path_progress, num_levels)
+			var btn = Button.new()
+			btn.position=point  + Vector2(-12,-12)
+			btn.size=Vector2(24,24)
+			btn.flat=true
+			btn.name = "level-%d"%level
+			$".".add_child(btn)
 			draw_circle(point,12,Color(0.8,0.4,0.2))
 
 func _process(delta):
