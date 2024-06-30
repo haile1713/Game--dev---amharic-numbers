@@ -14,6 +14,10 @@ config/name="amharic - numbers"
 run/main_scene="res://scences/game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 
+[autoload]
+
+LevelPassed="*res://scripts/level_passed.gd"
+
 [display]
 
 window/size/viewport_width=576
