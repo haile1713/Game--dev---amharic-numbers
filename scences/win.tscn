@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpaypwu5v5t25"]
+
+[ext_resource type="Script" path="res://scripts/level3.gd" id="1_043yq"]
+[ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="2_q0je5"]
+[ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="3_q36uu"]
+
+[sub_resource type="FontVariation" id="FontVariation_v4qjw"]
+base_font = ExtResource("3_q36uu")
+
+[sub_resource type="FontVariation" id="FontVariation_7xq71"]
+base_font = ExtResource("3_q36uu")
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_043yq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(576, 1024)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_q0je5")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.5
+offset_right = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 19
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 19
+theme_override_constants/margin_bottom = 11
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 504.0
+offset_bottom = 515.0
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_v4qjw")
+theme_override_font_sizes/font_size = 100
+text = "አሸንፈዋል"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 550.0
+offset_right = 353.0
+offset_bottom = 627.0
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_7xq71")
+theme_override_font_sizes/font_size = 60
+text = "ቀጥሎ"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

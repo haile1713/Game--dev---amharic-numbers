@@ -7,3 +7,4 @@ res://scences/level4.tscn
 res://scripts/level1.gd
 res://scripts/level3.gd
 res://scences/gameover.tscn
+res://scences/win.tscn

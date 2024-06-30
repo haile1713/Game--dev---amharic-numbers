@@ -27,6 +27,7 @@ func _handle_number_clicked(card_name):
 	if right_number == 9: # finished the game
 		# print("congratulation")
 		button.visible = false # Hide the button
+		get_tree().change_scene_to_file("res://scences/win.tscn")
 	elif num == right_number: # correct number touched
 		score += 2
 		right_number += 1
