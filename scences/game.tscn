@@ -46,9 +46,11 @@ vertical_alignment = 1
 
 [node name="StartButton" type="Button" parent="UI/MenuButtons"]
 custom_minimum_size = Vector2(60, 0)
+offset_left = 200.0
 offset_top = 400.0
-offset_right = 576.0
-offset_bottom = 550.0
+offset_right = 350.0
+offset_bottom = 477.0
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.388235, 0.211765, 0.0588235, 1)
 theme_override_fonts/font = SubResource("FontVariation_lkjkm")
 theme_override_font_sizes/font_size = 60
@@ -58,10 +60,10 @@ flat = true
 
 [node name="QuitButton" type="Button" parent="UI/MenuButtons"]
 custom_minimum_size = Vector2(60, 0)
+offset_left = 200.0
 offset_top = 550.0
-offset_right = 576.0
-offset_bottom = 700.0
-scale = Vector2(1.00189, 1.07533)
+offset_right = 364.0
+offset_bottom = 696.0
 theme_override_colors/font_color = Color(0.388235, 0.211765, 0.0588235, 1)
 theme_override_fonts/font = SubResource("FontVariation_ocbr4")
 theme_override_font_sizes/font_size = 60

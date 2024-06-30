@@ -74,9 +74,9 @@ layout_mode = 0
 offset_right = 149.0
 offset_bottom = 91.0
 scale = Vector2(0.672838, 0.603122)
-theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_wnuwq")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "ተመለስ"
 flat = true
 

@@ -23,7 +23,7 @@ func _handle_number_clicked(card):
 	elif(num == right_number): # correct number touched
 		score+=2
 		right_number+=1
-	else: # in correct
+	else: # incorrect
 		score -=1
 		print("not correct try again")
 		if score <=0:
