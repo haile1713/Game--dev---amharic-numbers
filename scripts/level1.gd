@@ -14,9 +14,9 @@ func _ready():
 	right_number = 1
 
 func _handle_number_clicked(card):
-	var num = card_numbers[card]
+	var num = card_numbers[card].to_int()
 	print("number ",num, " touched ")
-	#if(num == right_number):
-		#right_number+=1
-	#else:
-		#print("game over")
+	if(num == right_number):
+		right_number+=1
+	else:
+		print("game over")
