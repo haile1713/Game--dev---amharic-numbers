@@ -4,6 +4,6 @@ res://scences/level1.tscn
 res://scences/level2.tscn
 res://scences/level3.tscn
 res://scences/level4.tscn
-res://scripts/display_random_nums.gd
 res://scripts/level1.gd
-res://scripts/random_number.gd
+res://scripts/level3.gd
+res://scences/gameover.tscn

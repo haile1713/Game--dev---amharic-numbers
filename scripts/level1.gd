@@ -36,7 +36,8 @@ func _handle_number_clicked(card_name):
 		# print("not correct try again")
 		button.modulate = Color(1, 0, 0) # Red color for incorrect choice
 		if score <= 0:
-			print("Game over")
+			print("Game over") #for testing
+			get_tree().change_scene_to_file("res://scences/gameover.tscn")
 
 
 
