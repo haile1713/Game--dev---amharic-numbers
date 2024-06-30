@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk4g2a3tw77rm"]
+[gd_scene load_steps=11 format=3 uid="uid://dk4g2a3tw77rm"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_ohv68"]
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="2_sex35"]
@@ -6,6 +6,9 @@
 [ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="4_7fmjo"]
 [ext_resource type="Script" path="res://scripts/random_number.gd" id="5_j1d83"]
 [ext_resource type="Script" path="res://scripts/display_random_nums.gd" id="5_p8bxp"]
+
+[sub_resource type="FontVariation" id="FontVariation_wr2er"]
+base_font = ExtResource("4_7fmjo")
 
 [sub_resource type="FontVariation" id="FontVariation_k6o0a"]
 base_font = ExtResource("4_7fmjo")
@@ -53,6 +56,16 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 0
+
+[node name="score" type="Label" parent="Background/Margin/VBox/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_wr2er")
+theme_override_font_sizes/font_size = 40
+text = "ነጥብ"
+horizontal_alignment = 2
 
 [node name="GridContainer" type="GridContainer" parent="Background/Margin/VBox/MarginContainer"]
 layout_mode = 2

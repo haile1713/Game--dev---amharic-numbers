@@ -1,6 +1,6 @@
 extends Control
 @onready var grid = $Background/Margin/VBox/ScrollContainer/GridContainer2
-@onready var score_label =$Background/Margin/VBox/MarginContainer2/score
+@onready var score_label =$Background/Margin/VBox/MarginContainer/score
 @onready var place1 = $"Background/Margin/VBox/MarginContainer/GridContainer/Q-card"
 @onready var place2 = $"Background/Margin/VBox/MarginContainer/GridContainer/Q-card2"
 @onready var answer = $"Background/Margin/VBox/MarginContainer/GridContainer/Q-card3"
@@ -44,9 +44,16 @@ func compute_addition():
 	print(num1,num2,answer)
 	if(num1 + num2 == answer):
 		get_tree().change_scene_to_file("res://scences/win.tscn")
+		score += 2
+		score_label.text = "ነጥብ:"+ str(score)
 	else:
 		place1.get_children()[0].texture = null
 		place2.get_children()[0].texture = null
+		score -= 1
+		score_label.text = "ነጥብ:" + str(score)
+		if score <= 0:
+			print("Game over") #for testing
+			get_tree().change_scene_to_file("res://scences/gameover.tscn")
 		
 	
 	

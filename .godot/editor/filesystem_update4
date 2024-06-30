@@ -3,8 +3,8 @@ res://scences/map.tscn
 res://scences/level1.tscn
 res://scences/level2.tscn
 res://scences/level3.tscn
-res://scences/level4.tscn
+res://scripts/random_number.gd
+res://test.tscn
+res://scripts/level2.gd
 res://scripts/level1.gd
-res://scripts/level3.gd
-res://scences/gameover.tscn
-res://scences/win.tscn
+res://scripts/map_maker.gd
