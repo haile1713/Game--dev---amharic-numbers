@@ -53,7 +53,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_o0dvx")
 theme_override_font_sizes/font_size = 40
 text = "ተመለስ"
@@ -104,6 +104,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.270588, 0.678431, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(0.270588, 0.678431, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(0.270588, 0.678431, 0.231373, 1)
 flat = true
 
 [node name="Card2" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
@@ -134,6 +137,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00262, 1)
 flat = true
 
 [node name="Card4" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
