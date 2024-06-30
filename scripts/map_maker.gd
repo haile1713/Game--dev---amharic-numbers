@@ -37,7 +37,6 @@ func _draw():
 			var point2 = curve.get_point_position(i-1)
 			draw_line(point2, point, Color(1,1,1), 5) # connect two point with a line
 		var path_progress = i/float(point_count)
-		print(getLevel(path_progress,num_levels))
 		if getLevel(path_progress, num_levels) != -1  and getLevel(path_progress, num_levels) != current_level:
 			 # if the progress it at a level which is not the current
 			var level = getLevel(path_progress, num_levels)
