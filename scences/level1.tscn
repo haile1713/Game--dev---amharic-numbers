@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfyioqlm7l146"]
+[gd_scene load_steps=9 format=3 uid="uid://cfyioqlm7l146"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_rlv5v"]
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="2_6yt7n"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="5_wuf4f"]
 
 [sub_resource type="FontVariation" id="FontVariation_o0dvx"]
+base_font = ExtResource("3_ivhym")
+
+[sub_resource type="FontVariation" id="FontVariation_ecjyq"]
 base_font = ExtResource("3_ivhym")
 
 [sub_resource type="FontVariation" id="FontVariation_dg4xq"]
@@ -58,6 +61,16 @@ theme_override_fonts/font = SubResource("FontVariation_o0dvx")
 theme_override_font_sizes/font_size = 40
 text = "ተመለስ"
 flat = true
+
+[node name="score" type="Label" parent="Background/Margin/VBox/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_ecjyq")
+theme_override_font_sizes/font_size = 40
+text = "ነጥብ"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Header" type="HBoxContainer" parent="Background/Margin/VBox"]
 custom_minimum_size = Vector2(0, 100)
