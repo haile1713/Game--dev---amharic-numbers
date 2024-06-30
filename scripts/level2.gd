@@ -24,6 +24,14 @@ func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://scences/map.tscn")
 
 
+func delay_function(delay_time):
+	var timer = Timer.new()
+	timer.wait_time = delay_time
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self, "compute_addition"))
+	add_child(timer)
+	timer.start()
+
 
 func _handle_num_click(card):
 	if(now_at < 1):
@@ -33,8 +41,7 @@ func _handle_num_click(card):
 	elif now_at == 1:
 		var num = card_numbers[card].to_int()
 		show_num(num, places[now_at])
-		compute_addition()
-		now_at = 0
+		delay_function(1.0)
 		
 
 func compute_addition():
@@ -43,13 +50,14 @@ func compute_addition():
 	var answer =  answer.get_children()[0].name.to_int()
 	print(num1,num2,answer)
 	if(num1 + num2 == answer):
+		score+=2 # add score
 		get_tree().change_scene_to_file("res://scences/win.tscn")
 	else:
+		score -=1 # incorrect answer
 		place1.get_children()[0].texture = null
 		place2.get_children()[0].texture = null
-		
-	
-	
+	now_at = 0
+
 func show_num(num:int, place)->void:
 	var numbers = numbers_needed(num) # for more than 1 digits
 	var gap = 50

@@ -1,7 +1,7 @@
 extends TextureRect
 
 func _ready():
-	var rand_num = randi_range(2,18)
+	var rand_num = randi_range(2,9)
 	show_num(rand_num)
 
 
