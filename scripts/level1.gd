@@ -22,9 +22,9 @@ func _handle_number_clicked(card_name):
 	print("Number", num, "touched. Score:", score)
 	var button = grid.get_node(card_name).get_children()[0]
 	
-	if right_number == 9:  # Finished the game
-		button.visible = false  # Hide the button
-		LevelPassed.emit_signal("level_passed")
+	if right_number == 9: # finished the game
+		button.visible = false # Hide the button
+		#LevelPassed.emit_signal("level_passed")
 		get_tree().change_scene_to_file("res://scences/win.tscn")
 	elif num == right_number:  # Correct number touched
 		score += 2
