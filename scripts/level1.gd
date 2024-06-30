@@ -1,12 +1,13 @@
 extends Control
 
 @onready var grid = $Background/Margin/VBox/ScrollContainer/GridContainer
+@onready var score_label =$Background/Margin/VBox/MarginContainer2/score
 
 
 
 var card_numbers = {}
 var right_number
-var score
+var score = 0
 
 func _ready():
 	var cards = []
@@ -30,10 +31,12 @@ func _handle_number_clicked(card_name):
 		get_tree().change_scene_to_file("res://scences/win.tscn")
 	elif num == right_number: # correct number touched
 		score += 2
+		score_label.text = "ነጥብ:"+ str(score)  # Update score label text
 		right_number += 1
 		button.visible = false # Hide the button
 	else: # incorrect
 		score -= 1
+		score_label.text = "ነጥብ:" + str(score)  # Update score label text
 		# print("not correct try again")
 		button.modulate = Color(1, 0, 0) # Red color for incorrect choice
 		if score <= 0:
