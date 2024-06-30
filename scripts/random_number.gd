@@ -1,7 +1,7 @@
 extends TextureRect
 
 func _ready():
-	var rand_num = randi_range(1,19)
+	var rand_num = randi_range(2,18)
 	show_num(rand_num)
 
 
@@ -9,13 +9,13 @@ func show_num(num:int)->void:
 	var numbers = numbers_needed(num) # for more than 1 digits
 	var gap = 50
 	var shift = 0
+	print(num)
 	for i in numbers: # for > 1 digits
-		var texture_rect = TextureRect.new()
+		var texture_rect =get_children()[0]
 		var number_img = "res://assets/numbers/%d.png" % i
 		texture_rect.texture = load(number_img)
 		texture_rect.name = str(i)
 		texture_rect.position.x += shift
-		add_child(texture_rect)
 		shift+=gap
 		
 func numbers_needed(num:int):

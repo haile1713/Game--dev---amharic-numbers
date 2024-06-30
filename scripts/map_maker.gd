@@ -3,6 +3,7 @@ extends Node2D
 @onready var curve = $"..".curve 
 @onready var path_follower = $"../PathFollow2D"
 @onready var level_indicator = $"../PathFollow2D/current_level"
+@onready var level1 = preload("res://scences/level1.tscn")
 # initalization
 var current_level = 1
 
@@ -11,8 +12,10 @@ var num_levels = 4
 func _ready():
 	var level_name = "level-%d" %current_level 
 	level_indicator.name = level_name
+	LevelPassed.connect("level_passed", Callable(self, "_handle_level_pass"))
 # utilities
-func pass_level():
+func _handle_level_pass(name):
+	print(name)
 	if(current_level < num_levels): 
 		current_level +=1
 		var level_name = "level-%d" %current_level
@@ -47,7 +50,10 @@ func _draw():
 			btn.name = "level%d"%level
 			btn.add_to_group("levels")
 			$".".add_child(btn)
-			draw_circle(point,12,Color(0.8,0.4,0.2))
+			if( level <= current_level): 
+				draw_circle(point,12,Color(1,0,0))
+			else:
+				draw_circle(point,12,Color(0.8,0.4,0.1))
 	go_to_level_on_button()
 
 func _process(delta):
@@ -73,5 +79,4 @@ func go_to_level(level):
 	var change_scene = func ():
 		var goto = "res://scences/%s.tscn"%level
 		get_tree().change_scene_to_file(goto)
-		
 	return change_scene

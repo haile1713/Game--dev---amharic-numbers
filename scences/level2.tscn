@@ -306,13 +306,13 @@ theme_override_font_sizes/font_size = 40
 text = "ተመለስ"
 flat = true
 
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card1/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card2/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card3/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card4/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card5/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card6/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card7/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card8/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card9/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card1/Button" to="." method="_handle_num_click" binds= ["Card1"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card2/Button" to="." method="_handle_num_click" binds= ["Card2"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card3/Button" to="." method="_handle_num_click" binds= ["Card3"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card4/Button" to="." method="_handle_num_click" binds= ["Card4"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card5/Button" to="." method="_handle_num_click" binds= ["Card5"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card6/Button" to="." method="_handle_num_click" binds= ["Card6"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card7/Button" to="." method="_handle_num_click" binds= ["Card7"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card8/Button" to="." method="_handle_num_click" binds= ["Card8"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card9/Button" to="." method="_handle_num_click" binds= ["Card9"]]
 [connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]
