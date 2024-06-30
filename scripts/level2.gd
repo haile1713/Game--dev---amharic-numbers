@@ -1,6 +1,6 @@
 extends Control
 @onready var grid = $Background/Margin/VBox/ScrollContainer/GridContainer2
-@onready var score_label =$Background/Margin/VBox/MarginContainer2/score
+@onready var score_label =$MarginContainer2/score
 @onready var place1 = $"Background/Margin/VBox/MarginContainer/GridContainer/Q-card"
 @onready var place2 = $"Background/Margin/VBox/MarginContainer/GridContainer/Q-card2"
 @onready var answer = $"Background/Margin/VBox/MarginContainer/GridContainer/Q-card3"
@@ -13,11 +13,13 @@ func _ready():
 	var cards = []
 	places = [place1, place2]
 	for i in grid.get_children():
+		if i.get_child_count() == 0:
+			continue
 		cards.append(i)
 		var button = i.get_children()[0]
 		card_numbers[str(i.name)] = button.name
-		#button.pressed.connect(Callable(self, "_handle_number_clicked").bind(i.name))
-		#score_label.text = "ነጥብ:"+ str(score)  # Update score label text		
+		button.pressed.connect(Callable(self, "_handle_number_clicked").bind(i.name))
+		score_label.text = "ነጥብ:"+ str(score)  # Update score label text		
 	right_number = 1
 	score = 2
 func _on_back_button_pressed():

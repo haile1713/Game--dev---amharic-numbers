@@ -11,7 +11,7 @@ func show_num(num:int)->void:
 	var shift = 0
 	print(num)
 	for i in numbers: # for > 1 digits
-		var texture_rect =get_children()[0]
+		var texture_rect = get_children()[0]
 		var number_img = "res://assets/numbers/%d.png" % i
 		texture_rect.texture = load(number_img)
 		texture_rect.name = str(i)

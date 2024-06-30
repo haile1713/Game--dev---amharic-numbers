@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk4g2a3tw77rm"]
+[gd_scene load_steps=11 format=3 uid="uid://dk4g2a3tw77rm"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_ohv68"]
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="2_sex35"]
@@ -14,6 +14,9 @@ base_font = ExtResource("4_7fmjo")
 base_font = ExtResource("4_7fmjo")
 
 [sub_resource type="FontVariation" id="FontVariation_b432d"]
+base_font = ExtResource("4_7fmjo")
+
+[sub_resource type="FontVariation" id="FontVariation_4qqpa"]
 base_font = ExtResource("4_7fmjo")
 
 [node name="Main-game-addition" type="Control"]
@@ -293,7 +296,7 @@ flat = true
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 1
-offset_right = 110.0
+offset_right = 543.0
 offset_bottom = 85.0
 
 [node name="BackButton" type="Button" parent="MarginContainer2"]
@@ -305,6 +308,16 @@ theme_override_fonts/font = SubResource("FontVariation_b432d")
 theme_override_font_sizes/font_size = 40
 text = "ተመለስ"
 flat = true
+
+[node name="score" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_4qqpa")
+theme_override_font_sizes/font_size = 40
+text = "ነጥብ"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card1/Button" to="." method="_handle_num_click" binds= ["Card1"]]
 [connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer2/Card2/Button" to="." method="_handle_num_click" binds= ["Card2"]]

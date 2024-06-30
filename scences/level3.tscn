@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdd5gc60ake0c"]
+[gd_scene load_steps=11 format=3 uid="uid://bdd5gc60ake0c"]
 
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_6v75d"]
 [ext_resource type="Texture2D" uid="uid://cmyl3x54rvqiy" path="res://assets/bg2.jpg" id="2_xsyf4"]
 [ext_resource type="Texture2D" uid="uid://d0w2k4k8nah51" path="res://assets/cardborder.png" id="3_7lh1i"]
 [ext_resource type="FontFile" uid="uid://bgiip0nxdc4di" path="res://assets/fonts/Chiret-Regular2.ttf" id="4_nc2f3"]
+[ext_resource type="Script" path="res://scripts/random_number.gd" id="5_k83xs"]
 [ext_resource type="Script" path="res://scripts/display_random_nums.gd" id="5_tvfkk"]
 
 [sub_resource type="FontVariation" id="FontVariation_7s7qh"]
@@ -15,6 +16,9 @@ base_font = ExtResource("4_nc2f3")
 [sub_resource type="FontVariation" id="FontVariation_5a58k"]
 base_font = ExtResource("4_nc2f3")
 
+[sub_resource type="FontVariation" id="FontVariation_qfnrx"]
+base_font = ExtResource("4_nc2f3")
+
 [node name="Main-game-subtraction" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -24,14 +28,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6v75d")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(576, 1024)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_xsyf4")
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,18 +49,18 @@ theme_override_constants/margin_top = 11
 theme_override_constants/margin_right = 19
 theme_override_constants/margin_bottom = 11
 
-[node name="VBox" type="VBoxContainer" parent="Margin"]
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Margin/VBox"]
+[node name="MarginContainer" type="MarginContainer" parent="Background/Margin/VBox"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="Margin/VBox/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="Background/Margin/VBox/MarginContainer"]
 layout_mode = 2
 columns = 5
 
-[node name="Q-card" type="TextureRect" parent="Margin/VBox/MarginContainer/GridContainer"]
+[node name="Q-card" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -64,7 +68,7 @@ size_flags_vertical = 10
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Margin/VBox/MarginContainer/GridContainer/Q-card"]
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer/Q-card"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,13 +76,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Subtraction" type="MarginContainer" parent="Margin/VBox/MarginContainer/GridContainer"]
+[node name="Subtraction" type="MarginContainer" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_constants/margin_top = 120
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Margin/VBox/MarginContainer/GridContainer/Subtraction"]
+[node name="Label" type="Label" parent="Background/Margin/VBox/MarginContainer/GridContainer/Subtraction"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -89,7 +93,7 @@ text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Q-card2" type="TextureRect" parent="Margin/VBox/MarginContainer/GridContainer"]
+[node name="Q-card2" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -97,7 +101,7 @@ size_flags_vertical = 10
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Margin/VBox/MarginContainer/GridContainer/Q-card2"]
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer/Q-card2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,13 +109,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Equal" type="MarginContainer" parent="Margin/VBox/MarginContainer/GridContainer"]
+[node name="Equal" type="MarginContainer" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_constants/margin_top = 120
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Margin/VBox/MarginContainer/GridContainer/Equal"]
+[node name="Label" type="Label" parent="Background/Margin/VBox/MarginContainer/GridContainer/Equal"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -122,15 +126,16 @@ text = "="
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Q-card3" type="TextureRect" parent="Margin/VBox/MarginContainer/GridContainer"]
+[node name="Q-card3" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 10
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
+script = ExtResource("5_k83xs")
 
-[node name="TextureRect" type="TextureRect" parent="Margin/VBox/MarginContainer/GridContainer/Q-card3"]
+[node name="TextureRect" type="TextureRect" parent="Background/Margin/VBox/MarginContainer/GridContainer/Q-card3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,28 +143,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="Margin/VBox"]
+[node name="MarginContainer2" type="MarginContainer" parent="Background/Margin/VBox"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Margin/VBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/Margin/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="Margin/VBox/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Background/Margin/VBox/ScrollContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/v_separation = 50
 columns = 3
 script = ExtResource("5_tvfkk")
 
-[node name="Card1" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card1" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card1"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -168,13 +173,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card2" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card2" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card2"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -183,13 +188,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card3" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card3" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card3"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,13 +203,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card4" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card4" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card4"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -213,13 +218,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card5" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card5" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card5"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,13 +233,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card6" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card6" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card6"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card6"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,13 +248,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card7" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card7" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card7"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -258,13 +263,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card8" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card8" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card8"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card8"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -273,13 +278,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Card9" type="TextureRect" parent="Margin/VBox/ScrollContainer/GridContainer"]
+[node name="Card9" type="TextureRect" parent="Background/Margin/VBox/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 texture = ExtResource("3_7lh1i")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Margin/VBox/ScrollContainer/GridContainer/Card9"]
+[node name="Button" type="Button" parent="Background/Margin/VBox/ScrollContainer/GridContainer/Card9"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -291,7 +296,7 @@ flat = true
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 0
-offset_right = 110.0
+offset_right = 570.0
 offset_bottom = 85.0
 
 [node name="BackButton" type="Button" parent="MarginContainer2"]
@@ -304,13 +309,23 @@ theme_override_font_sizes/font_size = 40
 text = "ተመለስ"
 flat = true
 
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card1/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card2/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card3/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card4/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card5/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card6/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card7/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card8/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Margin/VBox/ScrollContainer/GridContainer/Card9/Button" to="." method="_on_button_pressed"]
+[node name="score" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.239216, 0.121569, 0.0235294, 1)
+theme_override_fonts/font = SubResource("FontVariation_qfnrx")
+theme_override_font_sizes/font_size = 40
+text = "ነጥብ"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card1/Button" to="." method="_handle_num_click" binds= ["Card1"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card2/Button" to="." method="_handle_num_click" binds= ["Card2"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card3/Button" to="." method="_handle_num_click" binds= ["Card3"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card4/Button" to="." method="_handle_num_click" binds= ["Card4"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card5/Button" to="." method="_handle_num_click" binds= ["Card5"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card6/Button" to="." method="_handle_num_click" binds= ["Card6"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card7/Button" to="." method="_handle_num_click" binds= ["Card7"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card8/Button" to="." method="_handle_num_click" binds= ["Card8"]]
+[connection signal="pressed" from="Background/Margin/VBox/ScrollContainer/GridContainer/Card9/Button" to="." method="_handle_num_click" binds= ["Card9"]]
 [connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]
