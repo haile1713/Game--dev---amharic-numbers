@@ -53,12 +53,11 @@ func compute_addition():
 		score+=2 # add score
 		get_tree().change_scene_to_file("res://scences/win.tscn")
 		score += 2
-		score_label.text = "ነጥብ:"+ str(score)
+		score_label.text = "ነጥብ:" + str(score)
 	else:
 		score -=1 # incorrect answer
 		place1.get_children()[0].texture = null
 		place2.get_children()[0].texture = null
-
 		score -= 1
 		score_label.text = "ነጥብ:" + str(score)
 		if score <= 0:
